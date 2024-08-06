@@ -1,4 +1,5 @@
 import { Canvas } from "@react-three/fiber";
+import { CameraControls, Environment, PerspectiveCamera } from "@react-three/drei";
 
 function App() {
   return (
@@ -6,7 +7,11 @@ function App() {
       <Canvas style={{ backgroundColor: "white" }}>
         <mesh>
           <boxGeometry />
+          <ambientLight intensity={Math.PI / 2} />
+          <CameraControls minPolarAngle={0} maxPolarAngle={Math.PI / 1.6} />
           <meshStandardMaterial />
+          <Environment preset='forest' background blur={1} />
+          <PerspectiveCamera makeDefault position={[10, 10, 10]} />
         </mesh>
       </Canvas>
     </div>
