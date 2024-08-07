@@ -1,5 +1,6 @@
 import { Canvas } from "@react-three/fiber";
-import { CameraControls, Environment, PerspectiveCamera } from "@react-three/drei";
+import { CameraControls, PerspectiveCamera } from "@react-three/drei";
+import { Lemon } from "./Scene";
 
 function App() {
   return (
@@ -10,7 +11,9 @@ function App() {
           <ambientLight intensity={Math.PI / 2} />
           <CameraControls minPolarAngle={0} maxPolarAngle={Math.PI / 1.6} />
           <meshStandardMaterial />
-          <Environment preset='forest' background blur={1} />
+          <group scale={20} position={[0, 0, 0]}>
+            <Lemon />
+          </group>
           <PerspectiveCamera makeDefault position={[10, 10, 10]} />
         </mesh>
       </Canvas>
