@@ -7,7 +7,6 @@ function App() {
     <div id='canvas-container' style={{ width: "100dvw", height: "100dvh" }}>
       <Canvas style={{ backgroundColor: "white" }}>
         <mesh>
-          <boxGeometry />
           <ambientLight intensity={Math.PI / 2} />
           <CameraControls minPolarAngle={0} maxPolarAngle={Math.PI / 1.6} />
           <meshStandardMaterial />
